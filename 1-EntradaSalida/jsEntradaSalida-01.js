@@ -8,4 +8,3 @@ function mostrar()
 	//Alert("Hola mundo"); esto no funciona
 	alert("Esto funciona de maravilla");
 }
-
