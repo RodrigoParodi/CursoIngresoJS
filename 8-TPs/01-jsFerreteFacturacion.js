@@ -1,4 +1,7 @@
-/*1.	Para el departamento de facturación:
+/*
+Parodi Rodrigo
+e/s TP 1
+1.	Para el departamento de facturación:
 A.	Ingresar tres precios de productos y mostrar la suma de los mismos.
 B.	Ingresar tres precios de productos y mostrar el promedio de los mismos.
 C.	ingresar tres precios de productos  y mostrar precio final (más IVA 21%).
@@ -20,7 +23,7 @@ function Sumar ()
 
 	precioTotal=primerPrecio + segundoPrecio + tercerPrecio;
 
-	alert("Su total es "+precioTotal);
+	alert("Su total es $"+precioTotal);
 }
 function Promedio () 
 {
@@ -42,7 +45,7 @@ function Promedio ()
 
 	Promedio=precioTotal/3;
 
-	alert("El promedio es "+ Promedio);
+	alert("El promedio es $"+ Promedio);
 }
 function PrecioFinal () 
 {
@@ -67,7 +70,7 @@ function PrecioFinal ()
 
 	precioFinal=precioTotal + iva;
 
-	alert("Su precio es "+ precioFinal);
+	alert("Su precio es $"+ precioFinal);
 
 	
 }
