@@ -31,7 +31,7 @@ function Promedio ()
 	let segundoPrecio;
 	let tercerPrecio;
 	let precioTotal;
-	let Promedio;
+	let promedio;
 
 	primerPrecio=document.getElementById('txtIdPrecioUno').value;
 	segundoPrecio=document.getElementById('txtIdPrecioDos').value;
@@ -43,9 +43,9 @@ function Promedio ()
 
 	precioTotal=primerPrecio +segundoPrecio + tercerPrecio;
 
-	Promedio=precioTotal/3;
+	promedio=precioTotal/3;
 
-	alert("El promedio es $"+ Promedio);
+	alert("El promedio es $"+ promedio.toFixed(2));
 }
 function PrecioFinal () 
 {
