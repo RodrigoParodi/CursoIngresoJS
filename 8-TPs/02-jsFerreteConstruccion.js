@@ -37,11 +37,11 @@ function Circulo ()
 
 	radio=parseInt(radio);
 
-	perimetro=2*3.14*radio;
+	perimetro=2*Math.PI*radio;
 
 	alambreTotal=perimetro*3;
 
-	alert("Se necesita comprar "+ alambreTotal +" metros de alambre");
+	alert("Se necesita comprar "+ alambreTotal.toFixed(2) +" metros de alambre");
 }
 function Materiales () 
 {
