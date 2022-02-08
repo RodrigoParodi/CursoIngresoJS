@@ -1,8 +1,27 @@
+//Instruccion
+//Parodi Rodrigo
+//Ejercicio 6
 function mostrar()
 {
 	//tomo la edad  
-	alert("ok");
+	let edadIngresada;
 
+	edadIngresada = document.getElementById('txtIdEdad').value;
+	edadIngresada=parseInt(edadIngresada);
 
-
-}//FIN DE LA FUNCIÓN
+	if(edadIngresada>17)
+	{
+		alert("Usted tiene "+edadIngresada+" años y es Mayor de edad");
+	}
+	else
+	{
+		if(edadIngresada<13)
+		{
+			alert("Usted tiene "+edadIngresada+" años y es un Niño");
+		}else
+		{
+			alert("Usted tiene "+edadIngresada +" años y es Adolecente");
+		}
+	}
+}
+//FIN DE LA FUNCIÓN
