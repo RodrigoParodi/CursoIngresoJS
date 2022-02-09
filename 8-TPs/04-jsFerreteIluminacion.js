@@ -17,6 +17,8 @@ function CalcularPrecio ()
     let precioFinal;
     let precio;
     let porcentaje;
+    let importeFinal;
+    let iibb;
 
     lamparas=document.getElementById('txtIdCantidad').value;
     marca=document.getElementById('Marca').value;
@@ -29,17 +31,55 @@ function CalcularPrecio ()
 
     if(lamparas>5) //ejercicio A
     {
-        porcentaje=50
+        porcentaje=50;
     }
     else  //ejercicio B
     {
         if(lamparas == 5 && marca == "ArgentinaLuz")
         {
-            porcentaje=40
+            porcentaje=40;
         }
         else
         {
-            porcentaje=30
+            if(lamparas == 5)
+            {
+                porcentaje=30;
+            }
+            else   //ejercicio C
+            {
+                if(lamparas == 4 && marca == "ArgentinaLuz" || lamparas == 4  && marca == "FelipeLamparas")
+                {
+                    porcentaje=25;
+                }
+                else
+                {
+                    if(lamparas == 4)
+                    {
+                        porcentaje=20;
+                    }
+                    else    //ejercicio D
+                    {
+                        if(lamparas == 3 && marca == "ArgentinaLuz")
+                        {
+                            porcentaje=15;
+                        }
+                        else
+                        {
+                            if(lamparas == 3 && marca == "FelipeLamparas")
+                            {
+                                porcentaje=10;
+                            }
+                            else
+                            {
+                                if(lamparas == 3)
+                                {
+                                    porcentaje=5;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -47,4 +87,17 @@ function CalcularPrecio ()
     precioFinal=preciototalLampara - descuento;
     mensaje="$"+precioFinal;
     document.getElementById('txtIdprecioDescuento').value = mensaje;
+
+    importeFinal=precioFinal * lamparas;
+
+    if(importeFinal >120)
+    {
+        iibb= importeFinal*10/100;
+
+        alert("Total: $"+importeFinal+". Usted pago $"+iibb+" de ingresos brutos");
+    }
+    else
+    {
+        alert("Total: $"+importeFinal);
+    }
 }
