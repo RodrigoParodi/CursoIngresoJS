@@ -1,4 +1,7 @@
-/*4.	Para el departamento de iluminación:
+/*4.	
+//TP 4
+// PARODI RODRIGO
+Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
 B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
@@ -17,8 +20,7 @@ function CalcularPrecio ()
     let precioFinal;
     let precio;
     let porcentaje;
-    let importeFinal;
-    let iibb;
+    let impuesto;
 
     lamparas=document.getElementById('txtIdCantidad').value;
     marca=document.getElementById('Marca').value;
@@ -33,71 +35,70 @@ function CalcularPrecio ()
     {
         porcentaje=50;
     }
-    else  //ejercicio B
+    else       //ejercicio B
     {
-        if(lamparas == 5 && marca == "ArgentinaLuz")
+        if(lamparas>4)
         {
-            porcentaje=40;
-        }
-        else
-        {
-            if(lamparas == 5)
+            if(marca == "ArgentinaLuz")
+            {
+                porcentaje=40;
+            }
+            else
             {
                 porcentaje=30;
             }
-            else   //ejercicio C
+        }
+        else         //ejercicio C
+        {
+            if(lamparas>3)
             {
-                if(lamparas == 4 && marca == "ArgentinaLuz" || lamparas == 4  && marca == "FelipeLamparas")
+                if(marca == "ArgentinaLuz" || marca == "FelipeLamparas")
                 {
                     porcentaje=25;
                 }
                 else
                 {
-                    if(lamparas == 4)
+                    porcentaje=20;
+                }
+            }
+            else         //Ejercicio D
+            {
+                if(lamparas>2)
+                {
+                    if(marca == "ArgentinaLuz")
                     {
-                        porcentaje=20;
+                        porcentaje=15;
                     }
-                    else    //ejercicio D
+                    else
                     {
-                        if(lamparas == 3 && marca == "ArgentinaLuz")
+                        if(marca == "FelipeLamparas")
                         {
-                            porcentaje=15;
+                            porcentaje=10;
                         }
                         else
                         {
-                            if(lamparas == 3 && marca == "FelipeLamparas")
-                            {
-                                porcentaje=10;
-                            }
-                            else
-                            {
-                                if(lamparas == 3)
-                                {
-                                    porcentaje=5;
-                                }
-                            }
+                            porcentaje=5;
                         }
                     }
                 }
             }
         }
     }
-    
+
     descuento=preciototalLampara*porcentaje/100;
     precioFinal=preciototalLampara - descuento;
     mensaje="$"+precioFinal;
+
+    if(precioFinal>120)     //Ejercicio E
+    {
+        impuesto=precioFinal * 10/100;
+        precioFinal=precioFinal + impuesto;
+        alert("Usted pago $"+impuesto+" de mas debio a impuestos IIBB");
+    }
+
+    mensaje = "Total a pagar $"+precioFinal;
+
     document.getElementById('txtIdprecioDescuento').value = mensaje;
 
-    importeFinal=precioFinal * lamparas;
 
-    if(importeFinal >120)
-    {
-        iibb= importeFinal*10/100;
-
-        alert("Total: $"+importeFinal+". Usted pago $"+iibb+" de ingresos brutos");
-    }
-    else
-    {
-        alert("Total: $"+importeFinal);
-    }
 }
