@@ -87,7 +87,6 @@ function CalcularPrecio ()
 
     descuento=preciototalLampara*porcentaje/100;
     precioFinal=preciototalLampara - descuento;
-    mensaje="$"+precioFinal;
 
     if(precioFinal>120)     //Ejercicio E
     {
