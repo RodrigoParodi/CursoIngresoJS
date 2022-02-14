@@ -28,7 +28,6 @@ function verificar()
 	let numeroIngresado;
 	
 	numeroIngresado=document.getElementById('txtIdNumero').value;
-	numeroIngresado=parseInt(numeroIngresado).value;
 	contadorIntentos = contadorIntentos + 1;
 
 	if(numeroIngresado > numeroSecreto)
