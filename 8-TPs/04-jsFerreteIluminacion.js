@@ -10,10 +10,103 @@ D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es de
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
+//EJERCICIO REALIZADO CON SWITCH
  */
 function CalcularPrecio () 
 {
  	let lamparas;
+    let marca;
+    let preciototalLampara;
+    let descuento;
+    let precioFinal;
+    let precio;
+    let porcentaje;
+    let impuesto;
+
+    lamparas=document.getElementById('txtIdCantidad').value;
+    marca=document.getElementById('Marca').value;
+
+    lamparas=parseInt(lamparas);
+
+    precio=35;
+    porcentaje=0;
+    preciototalLampara=lamparas*precio;
+
+    switch(lamparas)
+    {
+        case 3:
+            switch(marca)
+            {
+                case "ArgentinaLuz":
+                    porcentaje=15;
+                break;
+                case "FelipeLamparas":
+                    porcentaje=10;
+                break;
+                default:
+                    porcentaje=5;
+                break;
+            }
+        break;
+
+        case 4:
+            switch(marca)
+            {
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    porcentaje=25;
+                break;
+                default:
+                    porcentaje=20;
+                break;
+            }
+        break;
+
+        case 5:
+            switch(marca)
+            {
+                case "ArgentinaLuz":
+                    porcentaje=40;
+                break;
+                default:
+                    porcentaje=30;
+                break;
+            }
+        break;
+
+        case 1:
+        case 2:
+            porcentaje=0;
+        break;
+
+        default:
+            porcentaje=50;
+        break;
+    }
+
+    descuento=preciototalLampara*porcentaje/100;
+    precioFinal=preciototalLampara - descuento;
+
+    if(precioFinal>120)     //Ejercicio E
+    {
+        impuesto=precioFinal * 10/100;
+        precioFinal=precioFinal + impuesto;
+        alert("Usted pago $"+impuesto+" de mas debio a impuestos IIBB");
+    }
+
+    mensaje = "Total a pagar $"+precioFinal;
+
+    document.getElementById('txtIdprecioDescuento').value = mensaje;
+
+
+}
+
+
+//EJERCICIO REALIZADO CON IF Y ELSE
+/*
+function CalcularPrecio () 
+{
+    let lamparas;
     let marca;
     let preciototalLampara;
     let descuento;
@@ -99,5 +192,5 @@ function CalcularPrecio ()
 
     document.getElementById('txtIdprecioDescuento').value = mensaje;
 
-
+/*
 }
