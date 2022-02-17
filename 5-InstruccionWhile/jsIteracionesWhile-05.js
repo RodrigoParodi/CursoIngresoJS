@@ -1,3 +1,6 @@
+//Instruccion While
+//Parodi Rodrigo
+//Ejercicio 05
 /*
 Al presionar el botón pedir un sexo
 'f' para femenino, 'm' para masculino.*/
