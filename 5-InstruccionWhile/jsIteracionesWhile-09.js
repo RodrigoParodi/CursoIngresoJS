@@ -13,8 +13,8 @@ function mostrar()
 	var respuesta;
 	//iniciar variables
 	banderaDelPrimero="subo";
-	respuesta='si';
-	while(respuesta=="si")
+	respuesta='SI';
+	while(respuesta=="SI")
 	{
 		numeroIngresado=prompt("Ingrese Numero");
 		numeroIngresado=parseInt(numeroIngresado);
@@ -37,6 +37,7 @@ function mostrar()
 			}
 		}
 		respuesta=prompt("desea continuar?");
+		respuesta=respuesta.toUpperCase();
 	}
 	txtIdMaximo.value=numeroMaximo;
 	txtIdMinimo.value=numeroMinimo;

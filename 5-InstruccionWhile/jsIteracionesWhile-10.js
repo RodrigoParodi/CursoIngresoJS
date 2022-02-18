@@ -16,14 +16,70 @@ function mostrar()
 	var respuesta;
 	var numeroIngresado;
 	var sumaNegativos=0;
+	let sumaDePositivos=0;
+	let contadorPositivo=0;
+	let contadorNegativo=0;
+	let contadorDeCeros=0;
+	let contadorNumeroPar=0;
+	let promedioPositivos;
+	let promedioNegativos;
+	let diferencia;
 
-	respuesta="si";
+	respuesta="SI";
 
-	while(respuesta=="si")
+	while(respuesta=="SI")
 	{
-		
+		numeroIngresado=prompt("Ingrese numero");
+		numeroIngresado=parseInt(numeroIngresado);
+
+		if(numeroIngresado>0)
+		{
+			contadorPositivo= contadorPositivo +1;
+			sumaDePositivos=sumaDePositivos + numeroIngresado;
+		}
+		else
+		{
+			if(numeroIngresado<0)
+			{
+				contadorNegativo= contadorNegativo +1;
+				sumaNegativos= sumaNegativos + numeroIngresado;
+			}
+			else
+			{
+				contadorDeCeros= contadorDeCeros +1;	
+			}
+		}
+
 		respuesta=prompt("desea continuar?");
+		respuesta=respuesta.toUpperCase();
 	}//fin del while
 
-	document.write("la suma de negativos es :"+sumaNegativos);
+
+	promedioPositivos= sumaDePositivos/contadorPositivo;
+	promedioNegativos= -(sumaNegativos)/contadorNegativo;
+
+	promedioNegativos= promedioNegativos.toFixed(2);
+	promedioPositivos= promedioPositivos.toFixed(2);
+
+	diferencia=contadorPositivo - contadorNegativo;
+
+	document.write("La suma de negativos es :"+sumaNegativos);
+	document.write("<br>");
+	document.write("La suma de los positivos es :"+sumaDePositivos);
+	document.write("<br>");
+	document.write("Se ingreso un total de "+contadorPositivo+" numeros positivos,");
+	document.write("<br>");
+	document.write("Se ingreso un total de "+contadorNegativo+" numeros negativos.");
+	document.write("<br>");
+	document.write("Cantidad de ceros ingresados :"+contadorDeCeros);
+	document.write("<br>");
+	document.write("El promedio de numero positivos es :"+promedioPositivos);
+	document.write("<br>");
+	document.write("El promedio de numero negativos es :"+promedioNegativos);
+	document.write("<br>");
+	document.write("La diferencia entre positivos y negativos es :"+diferencia);
+	document.write("<br>");
+	document.write("Se ingreso un total de "+contadorNumeroPar+" numeros par");
+
+
 }//FIN DE LA FUNCIÓN

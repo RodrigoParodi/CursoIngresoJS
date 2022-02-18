@@ -8,14 +8,17 @@ function mostrar()
 {
 	let mensaje;
 	var sexoIngresado;
+
 	sexoIngresado = prompt("ingrese f ó m .");
-	
-	while(sexoIngresado!="f" && sexoIngresado!="m")
+	sexoIngresado=sexoIngresado.toUpperCase();
+
+	while(sexoIngresado!="F" && sexoIngresado!="M") 
 	{
 		alert("Sexo incorrecto");
 		sexoIngresado = prompt("Ingrese si es f o m");
+		sexoIngresado=sexoIngresado.toUpperCase();
 	}
-	if(sexoIngresado == "f")
+	if(sexoIngresado == "F")
 	{
 		mensaje="Su sexo es Femenino";
 	}

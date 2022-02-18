@@ -15,9 +15,9 @@ function mostrar()
 
 	contador=0;
 	acumulador=0;
-	respuesta="si";
+	respuesta="SI";
 
-	while(respuesta=="si")
+	while(respuesta=="SI")
 	{
 		numeroIngresado=prompt("Ingrese Numero");
 		numeroIngresado=parseInt(numeroIngresado);
@@ -27,6 +27,7 @@ function mostrar()
 		acumulador= acumulador + numeroIngresado;
 
 		respuesta=prompt("Desea continuar?");
+		respuesta=respuesta.toUpperCase();
 	}
 
 	promedio=acumulador/contador;
