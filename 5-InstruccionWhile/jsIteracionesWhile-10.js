@@ -1,3 +1,6 @@
+//Instruccion While
+//Parodi Rodrigo
+//Ejercicio 10
 /*
 Al presionar el botón pedir  números  
 hasta que el usuario quiera, mostrar:
@@ -15,17 +18,23 @@ function mostrar()
 	//declarar contadores y variables 
 	var respuesta;
 	var numeroIngresado;
-	var sumaNegativos=0;
-	let sumaDePositivos=0;
-	let contadorPositivo=0;
-	let contadorNegativo=0;
-	let contadorDeCeros=0;
-	let contadorNumeroPar=0;
+	var sumaNegativos;
+	let sumaDePositivos;
+	let contadorPositivo;
+	let contadorNegativo;
+	let contadorDeCeros;
+	let contadorNumeroPar;
 	let promedioPositivos;
 	let promedioNegativos;
 	let diferencia;
 
 	respuesta="SI";
+	sumaNegativos=0;
+	sumaDePositivos=0;
+	contadorPositivo=0;
+	contadorNegativo=0;
+	contadorDeCeros=0;
+	contadorNumeroPar=0;
 
 	while(respuesta=="SI")
 	{
@@ -50,35 +59,48 @@ function mostrar()
 			}
 		}
 
+		if(numeroIngresado%2 == 0)
+		{
+			contadorNumeroPar=contadorNumeroPar+1;
+		}
+
 		respuesta=prompt("desea continuar?");
 		respuesta=respuesta.toUpperCase();
 	}//fin del while
 
-
-	promedioPositivos= sumaDePositivos/contadorPositivo;
-	promedioNegativos= -(sumaNegativos)/contadorNegativo;
-
-	promedioNegativos= promedioNegativos.toFixed(2);
-	promedioPositivos= promedioPositivos.toFixed(2);
-
+	
 	diferencia=contadorPositivo - contadorNegativo;
 
-	document.write("La suma de negativos es :"+sumaNegativos);
-	document.write("<br>");
-	document.write("La suma de los positivos es :"+sumaDePositivos);
-	document.write("<br>");
-	document.write("Se ingreso un total de "+contadorPositivo+" numeros positivos,");
-	document.write("<br>");
-	document.write("Se ingreso un total de "+contadorNegativo+" numeros negativos.");
-	document.write("<br>");
-	document.write("Cantidad de ceros ingresados :"+contadorDeCeros);
-	document.write("<br>");
-	document.write("El promedio de numero positivos es :"+promedioPositivos);
-	document.write("<br>");
-	document.write("El promedio de numero negativos es :"+promedioNegativos);
-	document.write("<br>");
-	document.write("La diferencia entre positivos y negativos es :"+diferencia);
-	document.write("<br>");
+	document.write("La suma de negativos es :"+sumaNegativos+"<br>");
+	document.write("La suma de los positivos es :"+sumaDePositivos+"<br>");
+	document.write("Se ingreso un total de "+contadorPositivo+" numeros positivos."+"<br>");
+	document.write("Se ingreso un total de "+contadorNegativo+" numeros negativos."+"<br>");
+	document.write("Cantidad de ceros ingresados :"+contadorDeCeros+"<br>");
+
+	if(contadorPositivo>0)
+	{
+		promedioPositivos= sumaDePositivos/contadorPositivo;
+		promedioPositivos= promedioPositivos.toFixed(2);
+
+		document.write("El promedio de numero positivos es :"+promedioPositivos+"<br>");
+	}
+	else
+	{
+		document.write("No se ingresaron numeros positivos para calcular el promedio"+"<br>");
+	}
+	if(contadorNegativo>0)
+	{
+		promedioNegativos= sumaNegativos/contadorNegativo;
+		promedioNegativos= promedioNegativos.toFixed(2);
+
+		document.write("El promedio de numero negativos es :"+promedioNegativos+"<br>");
+	}
+	else
+	{
+		document.write("No se ingresaron numeros negativos para calcular el promedio"+"<br>");
+	}
+	
+	document.write("La diferencia entre positivos y negativos es :"+diferencia+"<br>");
 	document.write("Se ingreso un total de "+contadorNumeroPar+" numeros par");
 
 
