@@ -42,10 +42,7 @@ function verificar()
 		}
 		else
 		{
-			if(numeroIngresado == numeroSecreto)
-			{
-				alert("Felicidades, Ganaste el juego con un total de "+contadorIntentos+" intentos.");
-			}
+			alert("Felicidades, Ganaste el juego con un total de "+contadorIntentos+" intentos.");	
 		}
 	}
 	document.getElementById('txtIdIntentos').value = contadorIntentos;
